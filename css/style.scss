@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+//COLORS
+
+//PRIMARY
+
+$lightCyan: hsl(193, 38%, 86%);
+$neonGreen: hsl(150, 100%, 66%);
+
+//SECONDARY
+
+$grayishBlue: hsl(217, 19%, 38%);
+$darkGrayishBlue: hsl(217, 19%, 24%);
+$darkBlue: hsl(218, 23%, 16%);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: $darkBlue;
+    font-family: "Manrope", sans-serif;
+}
+
+.card {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 330px;
+    width: 90%;
+    background-color: $darkGrayishBlue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 7px 0px rgba(30, 30, 30, 0.25);
+    -webkit-box-shadow: 2px 2px 7px 0px rgba(30, 30, 30, 0.25);
+    -moz-box-shadow: 2px 2px 7px 0px rgba(30, 30, 30, 0.25);
+}
+
+.advice-id {
+    color: $neonGreen;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+}
+
+.advice {
+    font-size: 24px;
+    padding: 0 1rem;
+    color: $lightCyan;
+}
+
+.divider {
+    margin: 1rem 0;
+}
+
+.advice-id, .advice, .divider {
+    transition: opacity 1s, transform 1s;
+}
+
+.down {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.dice {
+    position: absolute;
+    top: 90%;
+    width: 64px;
+    height: 64px;
+    background-color: $neonGreen;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
