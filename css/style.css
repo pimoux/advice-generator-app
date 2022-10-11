@@ -90,4 +90,41 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+@media screen and (min-width: 1440px) {
+  .card {
+    width: 35%;
+    border-radius: 1rem;
+    top: 47%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .advice-id {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.8rem;
+  }
+  .advice {
+    padding: 0 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 27px;
+  }
+  .dice {
+    cursor: pointer;
+    -webkit-transition: -webkit-box-shadow 0.2s;
+    transition: -webkit-box-shadow 0.2s;
+    transition: box-shadow 0.2s;
+    transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  }
+  .dice:hover {
+    -webkit-box-shadow: 0px 0px 30px 5px #52ffa8;
+    box-shadow: 0px 0px 30px 5px #52ffa8;
+  }
+  .divider {
+    margin: 0;
+    width: 85%;
+    height: 16px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

@@ -12,43 +12,34 @@ const randomIntFromInterval = (min, max) => {
 
 const randomId = randomIntFromInterval(1, 224);
 
-const makeRequest = async (id, init) => {
+const makeRequest = async (id) => {
   if (!isFetchingData) {
-    if (!init) {
-      isFetchingData = true;
-      adviceElt.classList.add("down");
-      adviceNumberElt.classList.add("down");
-      dividerElt.classList.add("down");
+    isFetchingData = true;
+    adviceElt.classList.add("down");
+    adviceNumberElt.classList.add("down");
+    dividerElt.classList.add("down");
 
-      const response = await fetch(`${baseUrl}/${id}`);
-      const json = await response.json();
+    const response = await fetch(`${baseUrl}/${id}`);
+    const json = await response.json();
 
-      setTimeout(() => {
-        adviceNumberElt.textContent = `ADVICE #${json.slip.id}`;
-        adviceElt.textContent = `${json.slip.advice}`;
-      }, 1000);
-
-      setTimeout(() => {
-        adviceElt.classList.remove("down");
-        adviceNumberElt.classList.remove("down");
-        dividerElt.classList.remove("down");
-      }, 2000);
-
-      setTimeout(() => {
-        isFetchingData = false;
-      }, 3000);
-    } else {
-      const response = await fetch(`${baseUrl}/${id}`);
-      const json = await response.json();
+    setTimeout(() => {
       adviceNumberElt.textContent = `ADVICE #${json.slip.id}`;
       adviceElt.textContent = `${json.slip.advice}`;
-    }
+    }, 1000);
+
+    setTimeout(() => {
+      adviceElt.classList.remove("down");
+      adviceNumberElt.classList.remove("down");
+      dividerElt.classList.remove("down");
+    }, 2000);
+
+    setTimeout(() => {
+      isFetchingData = false;
+    }, 3000);
   }
 };
 
-makeRequest(randomId, true);
-
 diceElt.addEventListener("click", async () => {
   const randomId = randomIntFromInterval(1, 224);
-  await makeRequest(randomId, false);
+  await makeRequest(randomId);
 });
